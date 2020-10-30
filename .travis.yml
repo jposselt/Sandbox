@@ -34,6 +34,7 @@ addons:
     - cmake
     - gcc-9
     - g++-9
+    - python3-pip
   homebrew:
     packages:
     - cmake
@@ -60,6 +61,10 @@ install:
 - echo ${CC}
 - echo ${CXX}
 - ${CXX} --version
+# Linux comes with an older cmake version. We use python-pip to install the latest.
+- if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+    python3 -m pip install cmake
+  fi
 - cmake --version
 
 script:
