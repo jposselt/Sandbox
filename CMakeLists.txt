@@ -9,4 +9,4 @@ project( sandbox
          HOMEPAGE_URL "https://github.com/jposselt/sandbox"
          LANGUAGES CXX )
 
-add_subdirectory(src)
+add_subdirectory(examples)

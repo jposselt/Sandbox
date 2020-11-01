@@ -1,8 +1,8 @@
-# src/CMakeLists.txt
+# examples/hello/CMakeLists.txt
 
 cmake_minimum_required(VERSION 3.15)
 
-# Top level poject
+# Poject
 project( hello
 		 VERSION 1.0.0
 		 DESCRIPTION "Hello world"
