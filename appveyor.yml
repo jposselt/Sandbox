@@ -18,7 +18,7 @@ platform:
   - x64
 
 configuration:
-  - RelWithDebInfo
+  - Release
   - Debug
 
 build_script:
