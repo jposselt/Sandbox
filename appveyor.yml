@@ -26,16 +26,10 @@ build_script:
     mkdir build
     cd build
     set PATH=%PATH%;C:\Users\appveyor\AppData\Roaming\Python\Python38\Scripts
+    "%PYTHON%" -m pip install --upgrade pip
     "%PYTHON%" -m pip install --user conan
     conan --version
-    if ("%platform%"=="x86") 
-    {
-        set CMAKE_GENERATOR_PLATFORM="Win32"
-    }
-    else
-    {
-        set CMAKE_GENERATOR_PLATFORM="%platform%"
-    }
+    if "%platform%"=="x86" (set CMAKE_GENERATOR_PLATFORM="Win32") else (set CMAKE_GENERATOR_PLATFORM="%platform%")
     cmake --version
     cmake .. -G "%CMAKE_GENERATOR%" -A "%CMAKE_GENERATOR_PLATFORM%" -DCMAKE_CONFIGURATION_TYPES="%CONFIGURATION%"
     cmake --build . --config "%CONFIGURATION%"

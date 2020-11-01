@@ -36,6 +36,7 @@ addons:
     - g++-9
     - python3-pip
     - libgl1-mesa-dev
+    - xorg-dev
   homebrew:
     packages:
     - cmake
