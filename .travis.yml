@@ -43,6 +43,7 @@ addons:
     - libxcb-image0-dev
     - libxcb-keysyms1-dev
     - libxcb-xinerama0-dev
+    - libglu1-mesa-dev
   homebrew:
     packages:
     - cmake
