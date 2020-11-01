@@ -35,6 +35,7 @@ addons:
     - gcc-9
     - g++-9
     - python3-pip
+    - libgl1-mesa-dev
   homebrew:
     packages:
     - cmake
