@@ -37,6 +37,7 @@ addons:
     - python3-pip
     - libgl1-mesa-dev
     - xorg-dev
+    - libxcb-render-util0-dev
   homebrew:
     packages:
     - cmake
