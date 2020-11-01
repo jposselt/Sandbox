@@ -61,11 +61,13 @@ install:
 - echo ${CC}
 - echo ${CXX}
 - ${CXX} --version
-# Linux comes with an older cmake version. We use python-pip to install the latest.
-- if [ "$TRAVIS_OS_NAME" = "linux" ]; then
-    python3 -m pip install cmake;
-  fi
+# Pip cannot install Conan without these upgrades
+- python3 -m pip install --upgrade pip setuptools
+# Install Conan and CMake >= 3.15
+- python3 -m pip install conan cmake
 - cmake --version
+# Fail if we can't run Conan.
+- conan --version
 
 script:
 - mkdir -p build && cd build

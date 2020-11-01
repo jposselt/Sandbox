@@ -11,6 +11,7 @@ environment:
     - JOB: Visual Studio 2019
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       CMAKE_GENERATOR: Visual Studio 16 2019
+      PYTHON: "C:\\Python38-x64\\python.exe"
 
 platform:
   - x86
@@ -23,6 +24,9 @@ configuration:
 build_script:
   - mkdir build
   - cd build
+  - set PATH=%PATH%;C:\Users\appveyor\AppData\Roaming\Python\Python38\Scripts
+  - "%PYTHON%" -m pip install --user conan
+  - conan --version
   - if "%platform%"=="x86" (set CMAKE_GENERATOR_PLATFORM="Win32")
       else (set CMAKE_GENERATOR_PLATFORM="%platform%")
   - cmake --version
