@@ -47,9 +47,10 @@ conan_cmake_run(
 		glew/2.1.0
 		glm/0.9.9.8
 	BASIC_SETUP
-	CMAKE_TARGETS # individual targets to link to
+	CMAKE_TARGETS	# individual targets to link to
 	BUILD
-		missing
+		all			# build all dependencies; otherwise we may not
+					# get debugging information (at least on Windows)
 )
 
 # Link libraries to our target
